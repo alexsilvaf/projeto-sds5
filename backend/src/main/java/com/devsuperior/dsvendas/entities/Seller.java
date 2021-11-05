@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 @Table(name = "tb_sellers")
 public class Seller {
@@ -21,7 +19,6 @@ public class Seller {
 	private Long id;
 	private String name;
 
-	@JsonIgnore
 	@OneToMany(mappedBy = "seller")
 	private List<Sale> sales = new ArrayList<>();
 	
